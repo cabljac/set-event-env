@@ -8,4 +8,5 @@ runs:
   steps:
     - name: Save event data to environment variable
       id: save-event-data
+      shell: bash
       run: echo "GITHUB_EVENT=$(echo '${{ toJson(github.event) }}' | jq -c .)" >> $GITHUB_ENV
