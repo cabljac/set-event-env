@@ -54,4 +54,4 @@ jobs:
         run: node lib/index.js
         working-directory: ./path-to-your-typescript-package
         env:
-          EVENT_DATA: ${{ env.GITHUB_EVENT }}
+          GITHUB_EVENT: ${{ env.GITHUB_EVENT }}
