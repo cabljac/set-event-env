@@ -1,0 +1,11 @@
+name: 'Set Event Data Environment Variable'
+description: 'Set an environment variable with all the triggering event data as a stringified object'
+author: 'cabljac'
+inputs: {}
+
+runs:
+  using: 'composite'
+  steps:
+    - name: Save event data to environment variable
+      id: save-event-data
+      run: echo "GITHUB_EVENT=$(echo '${{ toJson(github.event) }}' | jq -c .)" >> $GITHUB_ENV
